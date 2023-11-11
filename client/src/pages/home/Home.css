@@ -1,0 +1,19 @@
+.container-navbar {
+  background-color: #0d00c2;
+}
+.color-while{
+   color: #fff;
+}
+
+.container {
+  font-size: 1rem;
+  padding: 16px 20px;
+  width: 1200px;
+  margin: auto;
+}
+
+.container-list{
+  width: 1200px;
+  margin: auto;
+  margin-top: 4px;
+}
