@@ -113,7 +113,7 @@ module.exports = {
   },
   createProduct: async (req, res, next) => {
     try {
-      const { name, price, category, long_desc, short_desc } = req.body
+      const { name, price, category, long_desc, short_desc, quantity } = req.body
       if (name && price && category && long_desc && short_desc && req.files.length === 4) {
         let imgsURL = []
         for (let i = 0; i < req.files.length; i++) {
@@ -131,7 +131,8 @@ module.exports = {
           img1: imgsURL[0],
           img2: imgsURL[1],
           img3: imgsURL[2],
-          img4: imgsURL[3]
+          img4: imgsURL[3],
+          quantity
         })
         await product.save()
         res.status(200).json({ message: 'oke' })
