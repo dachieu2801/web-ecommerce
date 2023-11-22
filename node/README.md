@@ -1,7 +1,7 @@
 Introduction 
 
  - Project provide data for FE and process logic.
- - The project can provide authentication by token, provide products data, provide transaction data, provide card data, provide order data...
+ - The project can provide authentication by token, provide products data, provide card data, provide order data..., and provide password if client forgot but needs email signup.  
 
 # Build with
 
