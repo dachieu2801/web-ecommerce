@@ -1,14 +1,14 @@
 Introduction 
 
- - The project can view, order products and chat with admin ...
+- The project can add products,edit product,view cards,view orders, view products and view transactions, login and logout.
 
 # Build with
 
-  Reactjs
+  nodejs
 
 # Link
 
-https://client-ass3-njs.vercel.app/
+  https://addmin-ass3-njs.vercel.app/
 
 # Getting Started 
 
@@ -19,7 +19,6 @@ Technology
  - react-redux: version ^8.1.3 (https://react-redux.js.org/).
  - reduxjs/toolkit version ^1.9.7 (https://redux-toolkit.js.org/).
  - date-fns version ^2.30.0 (https://www.npmjs.com/package/date-fns).
- ...
 
 Before you continue, ensure you meet the following requirements:
 
@@ -29,9 +28,10 @@ Before you continue, ensure you meet the following requirements:
 
 Install
 
- - Clone project (https://github.com/dachieu2801/web-booking/tree/).
- - Clone Backend project (https://github.com/dachieu2801/web-booking/tree/main/node).
- - Clone FrontEnd project for admin (https://github.com/dachieu2801/web-booking/tree/main/react).
+ - Clone project (https://github.com/dachieu2801/web-ecommerce).
+ - Clone Backend project (https://github.com/dachieu2801/web-ecommerce/tree/main/node).
+ - Clone FrontEnd project for admin (https://github.com/dachieu2801/web-ecommerce/tree/main/admin).
+ - Clone FrontEnd project for client (https://github.com/dachieu2801/web-ecommerce/tree/main/client).
  - Go to configs/axios.js comment line 4 and uncomment line 3.
  - Open terminal in root folder project and type 'npm i'.
  - Run project with command 'npm start'.
@@ -52,7 +52,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
