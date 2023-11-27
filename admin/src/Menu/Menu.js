@@ -15,73 +15,48 @@ function Menu(props) {
 		}
 	}
 	return (
-		<aside className='left-sidebar' data-sidebarbg='skin6'>
-			<div className='scroll-sidebar' data-sidebarbg='skin6'>
-				<nav className='sidebar-nav'>
-					<ul id='sidebarnav'>
-						<li className='sidebar-item'>
-							<span style={{ cursor: 'pointer' }}
-								className='sidebar-link'
-								onClick={() => clickHandle('')}>
-								<i className='feather-icon'></i>
-								<span className='hide-menu'>Dashboard</span>
-							</span>
-						</li>
+		<aside className='h5 mt-4 ' >
+			<ul >
+				<li className=' mb-3'>
+					<span style={{ cursor: 'pointer' }}
+						onClick={() => clickHandle('history')}
+						className='sidebar-link'>
+						<span className='hide-menu'>
+							History
+						</span>
+					</span>
+				</li>
+				<li className=' mb-3'>
+					<span
+						style={{ cursor: 'pointer' }}
+						onClick={() => clickHandle('users')}
+						className='sidebar-link'>
+						<span className='hide-menu'>
+							Users
+						</span>
+					</span>
+				</li>
 
-						<li className='nav-small-cap'>
-							<span className='hide-menu'>Components</span>
-						</li>
-						<li className='sidebar-item'>
-							<span style={{ cursor: 'pointer' }}
-								onClick={() => clickHandle('history')}
-								className='sidebar-link'>
-								<i
-									className='feather-icon'></i>
-								<span className='hide-menu'>
-									History
-								</span>
-							</span>
-						</li>
-						<li className='sidebar-item'>
-							<span
-								style={{ cursor: 'pointer' }}
-								onClick={() => clickHandle('users')}
-								className='sidebar-link'>
-								<i
-									className='feather-icon'></i>
-								<span className='hide-menu'>
-									Users
-								</span>
-							</span>
-						</li>
+				<li className=' mb-3'>
+					<span
+						style={{ cursor: 'pointer' }}
+						onClick={() => clickHandle('products')}
+						className='sidebar-link'>
+						<span className='hide-menu'>
+							Products
+						</span>
+					</span>
+				</li>
+				<li >
+					<span
+						style={{ cursor: 'pointer' }}
 
-						<li className='sidebar-item'>
-							<span
-								style={{ cursor: 'pointer' }}
-								onClick={() => clickHandle('products')}
-								className='sidebar-link'>
-								<i
-									className='feather-icon'></i>
-								<span className='hide-menu'>
-									Products
-								</span>
-							</span>
-						</li>
-						<li className='sidebar-item'>
-							<span
-								style={{ cursor: 'pointer' }}
-								className='sidebar-link sidebar-link'
-								onClick={() => clickHandle('new')}
-							>
-								<i
-									className='feather-icon'></i>
-								<span className='hide-menu'>New Product</span>
-							</span>
-						</li>
-
-					</ul>
-				</nav>
-			</div>
+						onClick={() => clickHandle('new')}
+					>
+						<span className='hide-menu'>New Product</span>
+					</span>
+				</li>
+			</ul>
 		</aside>
 	);
 }

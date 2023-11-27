@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import  { useState } from 'react';
+import { useDispatch,  } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import UserAPI from '../API/UserAPI';
 import { addSession } from '../Redux/Action/ActionSession';
@@ -9,16 +9,11 @@ import queryString from 'query-string';
 function SignIn(props) {
 	const navigate = useNavigate()
 
-	//listCart được lấy từ redux
-	const listCart = useSelector((state) => state.Cart.listCart);
-
 	const [email, setEmail] = useState('');
 
 	const [password, setPassword] = useState('');
 
 	const [error, setError] = useState(false);
-
-	const [checkPush, setCheckPush] = useState(false);
 
 	const dispatch = useDispatch();
 
@@ -33,6 +28,7 @@ function SignIn(props) {
 	const onSubmit = () => {
 	
 		const fetchSignUp = async () => {
+			setError('')
 			const params = {
 				email,
 				password
@@ -45,9 +41,8 @@ function SignIn(props) {
 				localStorage.setItem('name_user', response.fullname);
 				localStorage.setItem('token_user', response.token);
 
-				const action = addSession(localStorage.getItem('id_user'));
+				const action = addSession(response.id);
 				dispatch(action);	
-				setCheckPush(true);
 				navigate('/')
 			} else{
 				setError(response.message);

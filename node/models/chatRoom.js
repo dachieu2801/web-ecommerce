@@ -11,7 +11,7 @@ const ChatRoom = new Schema({
       date: Date
     }
   ]
-  ,
+
 });
 
 module.exports = mongoose.model('ChatRoom', ChatRoom);

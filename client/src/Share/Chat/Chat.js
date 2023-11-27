@@ -5,7 +5,8 @@ import ChatRoomsAPI from '../../API/ChatRoomsAPI';
 // import { useSelector } from 'react-redux';
 
 import io from 'socket.io-client';
-const socket = io('https://nodejs-assign3.onrender.com', { transports: ['websocket'] });
+// const socket = io('https://nodejs-assign3.onrender.com', { transports: ['websocket'] });
+const socket = io('http://localhost:5000', { transports: ['websocket'] });
 
 function Chat(props) {
 	const messagesEnd = useRef();

@@ -1,6 +1,6 @@
 Introduction 
 
- - The project can view, order products and chat with admin ...
+ - Client can view order products,detail product,cart and chat with admin ...
 
 # Build with
 

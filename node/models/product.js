@@ -39,6 +39,15 @@ const Product = new Schema({
     type: String,
     required: true
   },
+  quantity: {
+    type: Number,
+    required: true
+  },
+  like: [
+    {
+      type: String,
+    }
+  ],
 });
 
 module.exports = mongoose.model('Product', Product);

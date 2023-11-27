@@ -4,6 +4,7 @@ const cartRoute = require('./cart');
 const emailRoute = require('./email');
 const historiesRoute = require('./history');
 const chat = require('./chat');
+const evaluateRoute = require('./evaluate');
 const isAuth = require('../middleware/isAuth')
 
 function route(app) {
@@ -12,6 +13,7 @@ function route(app) {
     app.use('/users', userRoute);
     app.use('/products', productRoute);
     app.use('/carts', isAuth.client, cartRoute);
+    app.use('/comment', isAuth.client, evaluateRoute);
     app.use('/histories', isAuth.client, historiesRoute);
     //admin
     app.use('/chatrooms', chat)

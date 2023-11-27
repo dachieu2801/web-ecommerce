@@ -47,7 +47,6 @@ io.on('connection', async (socket) => {
       chatRoom.text.push({ message, is_admin, date: new Date() })
       await chatRoom.save()
 
-      console.log(data);
       //sau khi lắng nghe dữ liệu, server phát lại dữ liệu này đến các socket khác
       io.emit('receive_message', 'success');
     } catch (err) {

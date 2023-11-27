@@ -155,8 +155,8 @@ module.exports = {
         subject: 'Confirm change password',
         html: `
         <p> Click reset password to get new password </p>
-        <a href=https://nodejs-assign3.onrender.com/users/reset-password/${user._id}>Reset password</a>
-      ` 
+        <a href='http://localhost:5000/users/reset-password/${user._id}'>Reset password</a>
+      `
       }
       transporter.sendMail(mainOptions, async function (err) {
         if (err) {

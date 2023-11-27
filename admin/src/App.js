@@ -9,7 +9,8 @@ import Users from './Users/Users';
 import Login from './Login/Login';
 import NewProduct from './New/NewProduct';
 import UpDateProduct from './New/UpDateProduct';
-import {AuthContextProvider} from './Context/AuthContext';
+import { AuthContextProvider } from './Context/AuthContext';
+import './App.css'
 
 function App() {
 	const [role, setRole] = useState(localStorage.getItem('role'))
@@ -18,28 +19,23 @@ function App() {
 		<div className='App'>
 			<AuthContextProvider>
 				<BrowserRouter>
-					<div
-						id='main-wrapper'
-						data-theme='light'
-						data-layout='vertical'
-						data-navbarbg='skin6'
-						data-sidebartype='full'
-						data-sidebar-position='fixed'
-						data-header-position='fixed'
-						data-boxed-layout='full'>
-						<Header role={role}/>
-						<Menu role={role} />
-						<div style={{margin:'80px 12px 0 270px'}}>
-						<Routes>
-							<Route path='/' element={<Home />} />
-							<Route path='/history' element={<Home />} />
-							<Route path='/login' element={<Login setRole={setRole} />} />
-							<Route path='/chat' element={<Chat />}/>
-							<Route path='/users' element={<Users />} />
-							<Route path='/products' element={<Products />} />
-							<Route path='/products/:id' element={<UpDateProduct />} />
-							<Route path='/new' element={<NewProduct />} />
-						</Routes>
+
+					<Header role={role} />
+					<div className='row'>
+						<div className='col-2 ' style={{ borderRight: '1px solid #ccc' }}>
+							<Menu role={role} />
+						</div>
+						<div className='col-10  component'>
+							<Routes>
+								<Route path='/' element={<Home />} />
+								<Route path='/history' element={<Home />} />
+								<Route path='/login' element={<Login setRole={setRole} />} />
+								<Route path='/chat' element={<Chat />} />
+								<Route path='/users' element={<Users />} />
+								<Route path='/products' element={<Products />} />
+								<Route path='/products/:id' element={<UpDateProduct />} />
+								<Route path='/new' element={<NewProduct />} />
+							</Routes>
 						</div>
 					</div>
 				</BrowserRouter>

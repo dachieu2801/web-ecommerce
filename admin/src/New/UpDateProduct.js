@@ -14,8 +14,6 @@ const UpDateProduct = () => {
   const [category, setCategory] = useState();
   const [short_desc, setShort_desc] = useState();
   const [long_desc, setLong_desc] = useState();
-  const [quantity, setQuantity] = useState(0);
-
   const [file, setFile] = useState([]);
 
   useEffect(() => {
@@ -29,7 +27,6 @@ const UpDateProduct = () => {
         setCategory(response.product.category);
         setShort_desc(response.product.short_desc);
         setLong_desc(response.product.long_desc);
-        setQuantity(response.product.quantity)
       }
     };
     fetchData();
@@ -49,11 +46,11 @@ const UpDateProduct = () => {
     formData.append('category', category)
     formData.append('short_desc', short_desc)
     formData.append('long_desc', long_desc)
-    formData.append('quantity ', quantity)
     const response = await axios(
       {
         method: "PUT",
-        url: 'https://nodejs-assign3.onrender.com/admin/edit',
+        // url: 'https://nodejs-assign3.onrender.com/admin/edit',
+        url: 'http://localhost:5000/admin/edit',
         data: formData,
         headers: {
           'Content-Type': 'multipart/form-data',
@@ -122,17 +119,6 @@ const UpDateProduct = () => {
             type='text'
             className='form-control'
             placeholder='Enter Category'
-          />
-        </div>
-        <div className='form-group'>
-          <label>Quantity of product</label>
-          <input
-            value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
-            name='quantity'
-            type='number'
-            className='form-control'
-            placeholder='Enter quantity of product'
           />
         </div>
         <div class='form-group'>

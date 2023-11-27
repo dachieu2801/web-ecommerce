@@ -11,7 +11,6 @@ const NewProduct = () => {
   const [category, setCategory] = useState();
   const [short_desc, setShort_desc] = useState();
   const [long_desc, setLong_desc] = useState();
-  const [quantity, setQuantity] = useState(0);
   const [file, setFile] = useState([]);
   const [err, setErr] = useState();
 
@@ -29,12 +28,12 @@ const NewProduct = () => {
       formData.append('category', category)
       formData.append('short_desc', short_desc)
       formData.append('long_desc', long_desc)
-      formData.append('quantity', quantity)
 
       const response = await axios(
         {
           method: "POST",
-          url: 'https://nodejs-assign3.onrender.com/admin/create',
+          // url: 'https://nodejs-assign3.onrender.com/admin/create',
+          url: 'http://localhost:5000/admin/create',
           data: formData,
           headers: {
             'Content-Type': 'multipart/form-data',
@@ -112,17 +111,6 @@ const NewProduct = () => {
             type='text'
             className='form-control'
             placeholder='Enter Category'
-          />
-        </div>
-        <div className='form-group'>
-          <label>Quantity of product</label>
-          <input
-            value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
-            name='quantity'
-            type='number'
-            className='form-control'
-            placeholder='Enter quantity of product'
           />
         </div>
         <div class='form-group'>

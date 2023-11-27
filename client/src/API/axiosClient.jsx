@@ -1,13 +1,11 @@
-
 // api/axiosClient.js
 import axios from 'axios';
 import queryString from 'query-string';
 
-// Set up default config for http requests here
 // Please have a look at here `https://github.com/axios/axios#requestconfig` for the full list of configs
 const axiosClient = axios.create({
-	baseURL: 'https://nodejs-assign3.onrender.com',
-	// baseURL: 'http://localhost:5000/',
+	// baseURL: 'https://nodejs-assign3.onrender.com',
+	baseURL: 'http://localhost:5000/',
 	// headers: {
 	// 	'content-type': 'application/json',	
 	// 	'Authorization': localStorage.getItem('token_user') || null,

@@ -7,9 +7,6 @@ import CheckoutAPI from '../API/CheckoutAPI';
 import convertMoney from '../convertMoney';
 import './Checkout.css';
 
-import io from 'socket.io-client';
-const socket = io('http://localhost:5000');
-
 function Checkout(props) {
 	const navigate = useNavigate()
 	if(!localStorage.getItem('id_user')){
@@ -156,18 +153,6 @@ function Checkout(props) {
 
 			sendMail();
 
-			// const data = localStorage.getItem('id_user');
-
-			// // // Gửi socket lên server
-			// // ///////////////////////////////////////////////////////////////////////////
-			// socket.emit('send_order', data);
-
-			// // //Dùng setTimeout delay 3s
-			// // //Sau 4s nó sẽ thực hiện
-			// setTimeout(() => {
-			// 	setSuccess(!success);
-			// 	setLoad(!load);
-			// }, 4000);
 		}
 	}, [load]);
 
