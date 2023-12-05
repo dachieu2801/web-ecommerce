@@ -1,6 +1,6 @@
 Introduction 
 
-- The project can add products,edit product,view cards,view orders, view products and view transactions, login and logout.
+- Admin can add products,edit product,view cards,view orders, view products and view transactions.
 
 # Build with
 
