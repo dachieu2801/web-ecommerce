@@ -21,7 +21,7 @@ To get started with Web-ecommerce:
 
 Clone the Repository
 
-git clone https://github.com/your-username/Web-ecommerce.git
+git clone https://github.com/dachieu2801/web-ecommerce
 
 # Contribution
 We welcome contributions and feedback to enhance the quality of Web-ecommerce. If you'd like to contribute, feel free to create pull requests or report issues on GitHub.
