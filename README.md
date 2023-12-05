@@ -2,6 +2,12 @@
 
 Welcome to Web-ecommerce, where technology meets convenience! Web-ecommerce is your premier online marketplace for the latest and greatest in electronic gadgets and cutting-edge technology. Explore a wide array of products and experience a seamless e-commerce journey tailored for tech enthusiasts.
 
+Link app demo client: https://client-ass3-njs.vercel.app
+
+Link app demo admin: https://addmin-ass3-njs.vercel.app
+
+Link app demo server: https://nodejs-assign3.onrender.com
+
 # Introduction
 
 Web-ecommerce is dedicated to providing a curated selection of high-quality tech products, from smartphones and laptops to smart home devices and accessories. Our platform is designed to offer a user-friendly shopping experience, combining sleek design with powerful features to ensure you find the tech solutions you need.
@@ -32,10 +38,6 @@ Email: ankhieu322@gmail.com
 
 GitHub: https://github.com/dachieu2801
 
-Link app demo client: https://client-ass3-njs.vercel.app
 
-Link app demo admin: https://addmin-ass3-njs.vercel.app
-
-Link app demo server: https://nodejs-assign3.onrender.com
 
 Thank you 
