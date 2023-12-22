@@ -47,6 +47,7 @@ function Detail(props) {
 			};
 			const query = '?' + queryString.stringify(params);
 			const response = await CommentAPI.getCommentProduct(query);
+			console.log(response);
 			if (response.evaluates.length > 0) {
 				set_list_comment(response.evaluates);
 			}
@@ -143,16 +144,13 @@ function Detail(props) {
 	//Tăng lên 1 đơn vị
 	const upText = () => {
 		const value = parseInt(text) + 1;
-
 		setText(value);
 	};
 
 	//Giảm 1 đơn vị
 	const downText = () => {
 		const value = parseInt(text) - 1;
-
 		if (value === 0) return;
-
 		setText(value);
 	};
 
@@ -160,10 +158,9 @@ function Detail(props) {
 	useEffect(() => {
 		const fetchData = async () => {
 			const response = await ProductAPI.getDetail(id);
-			console.log(response);
+			// console.log(response);
 			setDetail(response.product);
 		};
-
 		fetchData();
 	}, [id]);
 
@@ -225,9 +222,12 @@ function Detail(props) {
 
 	//star of product
 	const starHandle = () => {
+		if(list_comment.length === 0) {
+			return <p>Chưa có đánh giá</p>
+		}
 		const totalStar = list_comment.reduce((cur, acc) => cur + acc.star, 0)
 		const averageStar = (totalStar / list_comment.length).toFixed(1)
-
+  
 		const checkStar = (n) => {
 			const star =
 				averageStar < Number(`${n}.3`) ?
@@ -560,7 +560,7 @@ function Detail(props) {
 									el._id !== detail._id
 							)
 							.map((value) => {
-								console.log(value);
+
 								return (
 									<div className='col-lg-3 col-sm-6' key={value._id}>
 										<div className='product text-center skel-loader'>

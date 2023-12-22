@@ -13,7 +13,7 @@ function route(app) {
     app.use('/users', userRoute);
     app.use('/products', productRoute);
     app.use('/carts', isAuth.client, cartRoute);
-    app.use('/comment', isAuth.client, evaluateRoute);
+    app.use('/comment', evaluateRoute);
     app.use('/histories', isAuth.client, historiesRoute);
     //admin
     app.use('/chatrooms', chat)

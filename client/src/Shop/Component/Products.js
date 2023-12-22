@@ -26,6 +26,17 @@ function Products(props) {
 		});
 	}
 
+	const LazyImage = ({ src, alt }) => {
+		return (
+			<img
+				loading="lazy" // Thuộc tính quyết định ảnh có nên được tải lazy hay không
+				src={src}
+				alt={alt}
+				style={{ maxWidth: '100%', height: 'auto' }}
+			/>
+		);
+	};
+
 	return (
 		<div className='row'>
 			{/* -------------Product----------------- */}
@@ -38,10 +49,14 @@ function Products(props) {
 							<div className='position-relative mb-3'>
 								<div className='badge text-white badge-'></div>
 								<Link className='d-block' to={`/detail/${value._id}`}>
-									<img
-										className='img-fluid w-100'
+									<LazyImage
 										src={value.img1}
 										alt='...'
+
+									// <img
+									// 	className='img-fluid w-100'
+									// 	src={value.img1}
+									// 	alt='...'
 									/>
 								</Link>
 								<div className='product-overlay'>

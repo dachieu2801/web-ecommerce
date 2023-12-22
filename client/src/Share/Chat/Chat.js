@@ -91,6 +91,7 @@ function Chat(props) {
 		// Remove event listener on component unmount
 		return () => socket.off('receive_message');
 	}, [])
+	
 	// keos chat xuong
 	const scrollToBottom = () => {
 		if (messagesEnd.current) {

@@ -2,6 +2,18 @@ const Product = require('../models/product');
 const storage = require('../conf/firebase')
 const { ref, deleteObject, getDownloadURL, uploadBytesResumable } = require('firebase/storage')
 
+//get url image from client send (when image send to server,image saved in firebase and get url)
+async function getUrlImage(req) {
+  const metadata = {
+    contentType: req.files[i].mimetype,
+  };
+  const fileRef = await ref(storage, `${Math.random()}`)
+  const upload = await uploadBytesResumable(fileRef, req.files[i].buffer, metadata)
+  const url = await getDownloadURL(upload.ref)
+  return url
+}
+
+
 module.exports = {
   allProducts: async (req, res, next) => {
     try {
@@ -86,28 +98,25 @@ module.exports = {
         for (let i = 0; i < req.files.length; i++) {
           //xóa ảnh đầu
           const desertRef = await ref(storage, product.img1)
-          console.log(desertRef);
           await deleteObject(desertRef)
 
           product.img1 = product.img2
           product.img2 = product.img3
           product.img3 = product.img4
-          const metadata = {
-            contentType: req.files[i].mimetype,
-          };
+          // const metadata = {
+          //   contentType: req.files[i].mimetype,
+          // };
           // thêm ảng cuối
-          const fileRef = await ref(storage, `${Math.random()}`)
-          const upload = await uploadBytesResumable(fileRef, req.files[i].buffer, metadata)
-          const url = await getDownloadURL(upload.ref)
+          const url = getUrlImage(req)
+          // const fileRef = await ref(storage, `${Math.random()}`)
+          // const upload = await uploadBytesResumable(fileRef, req.files[i].buffer, metadata)
+          // const url = await getDownloadURL(upload.ref)
           product.img4 = url
         }
       }
       await product.save()
       res.status(200).json({ message: 'oke' })
-
     } catch (err) {
-      console.log(err.message);
-
       res.status(400).json({ message: err.message })
     }
   },
@@ -117,12 +126,13 @@ module.exports = {
       if (name && price && category && long_desc && short_desc && req.files.length === 4) {
         let imgsURL = []
         for (let i = 0; i < req.files.length; i++) {
-          const metadata = {
-            contentType: req.files[i].mimetype,
-          };
-          const fileRef = await ref(storage, `${Math.random()}`)
-          const upload = await uploadBytesResumable(fileRef, req.files[i].buffer, metadata)
-          const url = await getDownloadURL(upload.ref)
+          // const metadata = {
+          //   contentType: req.files[i].mimetype,
+          // };
+          const url = getUrlImage(req)
+          // const fileRef = await ref(storage, `${Math.random()}`)
+          // const upload = await uploadBytesResumable(fileRef, req.files[i].buffer, metadata)
+          // const url = await getDownloadURL(upload.ref)
           imgsURL.push(url)
         }
 
